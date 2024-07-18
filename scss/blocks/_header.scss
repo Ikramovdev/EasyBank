@@ -1,4 +1,68 @@
 .site-header {
+    padding: 18px 0;
+    background-color: white;
+    box-shadow: 0 0 0.5px 0 black;
 }
 .header {
+    @include Display($items:Center, $space:space-between, $gap:0px);
+}
+.header__logo-wrapper {
+  display: inline-block;
+}
+.header__content-wrapper{
+    @include Display($items:Center, $space:space-between, $gap:226px);
+}
+.header__list {
+    @include Display($items:Center, $space:space-between, $gap:30px);
+}
+.header__item{
+    position:relative;
+    overflow: hidden; 
+}
+.header__item::before{
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background: linear-gradient(134.71deg, rgb(51, 211, 94) -49.181%,rgb(42, 182, 217) 50.399%);
+    left: -100%;
+    bottom: 0;
+    transition: 0.3s all linear;
+
+    &:hover{
+        left: 0;
+    }
+}
+.header__item::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background: linear-gradient(134.71deg, rgb(51, 211, 94) -49.181%,rgb(42, 182, 217) 50.399%);
+    right : -100%;
+    bottom: 0; 
+    transition: 0.3s all linear;
+
+    &:hover{
+        right: 0;
+    }
+}
+.header__item-link {
+    padding-bottom: 28px;
+    @include TextStyle($MB:0px, $FS:14px, $FW:400, $CLR:#9597A5, $LH:1px, $CASE:capitalize);
+    transition: 0.3s all linear;
+
+    &:hover{
+        color: #2D314D;
+    }
+}
+.header__btn {
+    @include ButtonStyle($BTN_W:163px, $BTN_PY:8px, $BTN_BG_CLR:transparent,$BTN_BR_Radius:22px, $BTN_Border_CLR:transparent,$BTN_FS:14px,$BTN_FW:500, $BTN_LH:28px, $BTN_CLR:$white-clr,$BTN_CASE:capitalize);
+    background: linear-gradient(134.71deg, rgb(51, 211, 94) -43.027%,rgb(42, 182, 217) 56.553%);
+    transition: 0.3s all linear;
+
+    &:hover{
+       opacity: 40%;
+    }
+    
 }

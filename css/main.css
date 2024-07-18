@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/public-sans-v15-latin-100.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/public-sans-v15-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/public-sans-v15-latin-500.woff2") format("woff2");
+}
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +39,105 @@
 }
 
 .container {
+  max-width: 1110px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.site-header {
+  padding: 18px 0;
+  background-color: white;
+  box-shadow: 0 0 0.5px 0 black;
+}
+
+.header {
+  display: flex;
+  align-items: Center;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+.header__logo-wrapper {
+  display: inline-block;
+}
+
+.header__content-wrapper {
+  display: flex;
+  align-items: Center;
+  justify-content: space-between;
+  gap: 226px;
+}
+
+.header__list {
+  display: flex;
+  align-items: Center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header__item {
+  position: relative;
+  overflow: hidden;
+}
+
+.header__item::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background: linear-gradient(134.71deg, rgb(51, 211, 94) -49.181%, rgb(42, 182, 217) 50.399%);
+  left: -100%;
+  bottom: 0;
+  transition: 0.3s all linear;
+}
+.header__item::before:hover {
+  left: 0;
+}
+
+.header__item::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background: linear-gradient(134.71deg, rgb(51, 211, 94) -49.181%, rgb(42, 182, 217) 50.399%);
+  right: -100%;
+  bottom: 0;
+  transition: 0.3s all linear;
+}
+.header__item::after:hover {
+  right: 0;
+}
+
+.header__item-link {
+  padding-bottom: 28px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9597A5;
+  line-height: 1px;
+  text-transform: capitalize;
+  transition: 0.3s all linear;
+}
+.header__item-link:hover {
+  color: #2D314D;
+}
+
+.header__btn {
+  width: 163px;
+  padding: 8px 0;
+  background-color: transparent;
+  border-radius: 22px;
+  border: 1px solid transparent;
+  transition: all 0.3s linear;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: white;
+  cursor: pointer;
+  text-transform: capitalize;
+  background: linear-gradient(134.71deg, rgb(51, 211, 94) -43.027%, rgb(42, 182, 217) 56.553%);
+  transition: 0.3s all linear;
+}
+.header__btn:hover {
+  opacity: 40%;
 }/*# sourceMappingURL=main.css.map */
