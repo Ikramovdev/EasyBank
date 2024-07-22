@@ -2,6 +2,9 @@
     padding: 18px 0;
     background-color: white;
     box-shadow: 0 0 0.5px 0 black;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 .header {
     @include Display($items:Center, $space:space-between, $gap:0px);
@@ -49,7 +52,7 @@
 }
 .header__item-link {
     padding-bottom: 28px;
-    @include TextStyle($MB:0px, $FS:14px, $FW:400, $CLR:#9597A5, $LH:1px, $CASE:capitalize);
+    @include TextStyle($MB:0px, $FS:14px, $FW:400, $CLR:#9597A5, $LH:-1px, $CASE:capitalize);
     transition: 0.3s all linear;
 
     &:hover{
@@ -65,4 +68,71 @@
        opacity: 40%;
     }
     
+}
+.hamburger-btn{
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+.modal-wrapper{
+    padding:88px 24px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    background: linear-gradient(180.00deg, rgb(45, 49, 77),rgba(45, 49, 77, 0) 100%);
+    transition: 0.3s all linear;
+    transform: scale(0);
+
+}
+.modal{
+    width: 100%;
+    padding: 32px 0;
+    display: none;
+    background-color: white;
+    border-radius: 4px;
+}
+.modal__list {
+    text-align: center;
+}
+.modal__item {
+    margin-bottom: 24px;
+}
+.modal__item:nth-child(5){
+    margin-bottom: 0px;
+}
+.modal__link {
+    @include TextStyle($MB:0px, $FS:18px, $FW:400, $CLR:#2D314D, $LH:1px, $CASE:capitalize);
+    transition: 0.3s all linear;
+    
+    &:hover{
+        color: #9597A5;
+    }
+}
+.show{
+    transform: scale(1);
+}
+// Responsive
+@media (max-width:900px){
+    .header__content-wrapper{
+        @include Display($items:Center, $space:space-between, $gap:50px);
+    }
+}
+// Mobile
+@media (max-width:712px){
+    .site-header{
+        padding: 22px 0;
+        z-index: 100;
+    }
+    .header__list{
+        display: none;
+    }
+    .header__btn{
+        display: none;
+    }
+    .hamburger-btn{
+        display: block;
+    }
 }

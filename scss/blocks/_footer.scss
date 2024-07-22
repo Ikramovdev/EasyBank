@@ -1,4 +1,95 @@
 .site-footer {
+    padding: 48px 0;
+    background-color: #2D314D;
 }
 .footer {
+    @include Display($items:center, $space:space-between, $gap:0px);
+}
+.footer__social-wrapper {
+    @include Display($items:center, $space:start, $gap:55px);
+    flex-direction: column;
+}
+.footer__social {
+    @include Display($items:center, $space:start, $gap:13px);
+}
+.footer__social-img-link{
+    color:white;
+    transition: 0.3s all linear;
+
+    &:hover{
+        color: #30C88F;
+    }
+}
+.footer__nav-left-list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer__nav-link {
+    padding-bottom: 28px;
+    @include TextStyle($MB:0px, $FS:15px, $FW:400, $CLR:$white-clr, $LH:26px, $CASE:capitalize);
+    transition: 0.3s all linear;
+
+    &:hover{
+        color: #30C88F;
+    }
+}
+.footer__nav-right-list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer__end-wrapper {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 24px;
+}
+.footer__end-btn {
+    @include ButtonStyle($BTN_W:163px, $BTN_PY:8px, $BTN_BG_CLR:transparent,$BTN_BR_Radius:22px, $BTN_Border_CLR:transparent,$BTN_FS:14px,$BTN_FW:500, $BTN_LH:28px, $BTN_CLR:$white-clr,$BTN_CASE:capitalize);
+    background: linear-gradient(134.71deg, rgb(51, 211, 94) -43.027%,rgb(42, 182, 217) 56.553%);
+    transition: 0.3s all linear;
+
+    &:hover{
+       opacity: 40%;
+    }
+}
+.footer__end-text {
+    @include TextStyle($MB:0px, $FS:15px, $FW:400, $CLR:$white-clr, $LH:26px, $CASE:capitalize);
+    opacity: 40%;
+}
+
+// Responsive
+
+// Mobile
+@media (max-width:957px){
+    .site-footer{
+        padding: 40px 0;
+    }
+    .footer{
+        @include Display($items:center, $space:start, $gap:0px);
+        flex-direction: column;
+    }
+    .footer__social-wrapper{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .footer__nav-left-list{
+        text-align: center;
+    }
+    .footer__nav-right-list{
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .footer__end-btn{
+        margin: 0 auto;
+    }
+}
+@media(max-width:400px){
+   .footer__end-btn{
+    width: 100%;
+   }
 }

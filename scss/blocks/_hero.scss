@@ -1,5 +1,86 @@
 .hero-section {
+    padding: 250px 0 170px;
+    position: relative;
+    background-image: url(../images/hero-bg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
 }
+.hero__content-wrapper{
+    position: relative;
+    z-index: 50;
+    max-width: 447px;
+}
+.hero__title {
+    @include TextStyle($MB:24px, $FS:56px, $FW:100, $CLR:$title-clr, $LH:64px, $CASE:inherit);
+}
+.hero__text {
+    @include TextStyle($MB:36px, $FS:18px, $FW:400, $CLR:$text-clr, $LH:28px, $CASE:inherit);
+}
+.hero__invite_btn {
+    @include ButtonStyle($BTN_W:163px, $BTN_PY:8px, $BTN_BG_CLR:transparent,$BTN_BR_Radius:22px,$BTN_Border_CLR:transparent,$BTN_FS:14px,$BTN_FW:500, $BTN_LH:28px, $BTN_CLR:$white-clr,$BTN_CASE:capitalize);
+    background: linear-gradient(134.71deg, rgb(51, 211, 94) -43.027%,rgb(42, 182, 217) 56.553%);
 
-.hero {
+    &:hover{
+       opacity: 40%;
+    }
+}
+.hero__img-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+.hero__mobile-img{
+    display: none;
+}
+// Responsive
+@media(max-width:1224px){
+    .hero__img-wrapper{
+        width: 650px;
+    }
+
+}
+@media(max-width:1109px){
+    .hero__img-wrapper{
+        width: 500px;
+        height: 700px;
+    }
+    .hero__title{
+        color: #383c5c;
+    }
+
+}
+// Mobile
+@media(max-width:957px){
+    .hero-section{
+        padding-top: 0px;
+        background-image: none;
+    }
+    .hero__img-wrapper{
+        display: none;
+    }
+    .hero__mobile-img{
+        display: block;
+        width: 100%;
+    }
+    .hero__content-wrapper{
+        max-width: 100%;
+        transform: translateY(-100px);
+        text-align: center;
+    }
+    .hero__title {
+        max-width: 100%;
+        @include TextStyle($MB:16px, $FS:40px, $FW:100, $CLR:$title-clr, $LH:47px, $CASE:inherit);
+    }
+    .hero__text {
+        @include TextStyle($MB:32px, $FS:15px, $FW:400, $CLR:$text-clr, $LH:25px, $CASE:inherit);
+    }
+}
+@media(max-width:400px){
+    .hero__content-wrapper{
+        transform: translateY(-50px);
+    }
+    .hero__invite_btn {
+        width: 100%;
+    }
 }

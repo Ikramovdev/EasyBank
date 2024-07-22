@@ -1,0 +1,85 @@
+.control-section {
+    padding: 96px 0 94px;
+    background-color: rgb(244, 245, 247);
+}
+.control {
+    @include Display($items:start, $space:start, $gap:72px);
+    flex-direction: column;
+}
+.control__content-wrapper {
+    width: 635px;
+    text-align: left;
+    margin-bottom: 72px;
+}
+.control__title {
+    @include TextStyle($MB:16px, $FS:40px, $FW:100, $CLR:$title-clr, $LH:64px, $CASE:inherit);
+}
+.control__text {
+    @include TextStyle($MB:0px, $FS:18px, $FW:400, $CLR:$text-clr, $LH:28px, $CASE:inherit);
+}
+.control__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.control__item {
+    max-width: 255px;
+    text-align: left;
+    margin-left: 30px;
+}
+.control__item:nth-child(1){
+    margin-left: 0px;
+}
+.control__item-img {
+    margin-bottom: 40px;
+}
+.control__item-subtitle {
+    @include TextStyle($MB:26px, $FS:24px, $FW:100, $CLR:$title-clr, $LH:28px, $CASE:inherit);
+
+}
+.control__item-text {
+    @include TextStyle($MB:0px, $FS:16px, $FW:400, $CLR:$text-clr, $LH:26px, $CASE:inherit);
+}
+
+// Responsive
+
+// Mobile
+@media(max-width:957px){
+    .control-section{
+        padding: 64px 0;
+        transform: translateY(-100px);
+    }
+    .control__content-wrapper{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 56px;
+    }
+    .control__title {
+        @include TextStyle($MB:14px, $FS:32px, $FW:100, $CLR:$title-clr, $LH:38px, $CASE:inherit);
+    }
+    .control__text {
+        @include TextStyle($MB:16px, $FS:15px, $FW:400, $CLR:$text-clr, $LH:25px, $CASE:inherit);
+    }
+    .control__list{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 32px;
+    }
+    .control__item{
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .control__item-img {
+        margin-bottom: 24px;
+    }
+    .control__item-subtitle {
+        @include TextStyle($MB:16px, $FS:20px, $FW:100, $CLR:$title-clr, $LH:28px, $CASE:inherit);
+    
+    }
+    .control__item-text {
+        @include TextStyle($MB:0px, $FS:15px, $FW:400, $CLR:$text-clr, $LH:25px, $CASE:inherit);
+    }
+}
